@@ -32,60 +32,301 @@
         body {
             font-family: 'Roboto', sans-serif;
         }
-        /* Footer General Styles */
-.site-footer {
-    padding: 60px 0;
-    background-color: #1c1c1c;
-    color: #ffffff;
-}
 
-.site-footer .navbar-brand {
-    font-size: 1.5rem;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-}
+        /* ===== NAVBAR ===== */
+        .sp-navbar {
+            background: #ffffff;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            padding: 8px 0;
+            border-bottom: none;
+            z-index: 1030;
+        }
 
-.site-footer-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #f8f9fa;
-}
+        .sp-navbar-logo {
+            height: 44px;
+            transition: height 0.3s ease;
+        }
 
-.site-footer-links {
-    list-style: none;
-    padding: 0;
-}
+        .sp-navbar .nav-link {
+            color: #2d3436;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 0.3px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
 
-.site-footer-link {
-    color: #ccc;
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-    display: inline-block;
-    transition: color 0.3s;
-}
+        .sp-navbar .nav-link:hover,
+        .sp-navbar .nav-link.active {
+            color: #13547a;
+            background: rgba(19, 84, 122, 0.06);
+        }
 
-.site-footer-link:hover {
-    color: #007bff;
-}
+        /* Regular dropdowns (user menu, register) */
+        .sp-navbar .dropdown-menu {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+            padding: 12px 0;
+            margin-top: 0;
+        }
 
-.copyright-text {
-    font-size: 0.85rem;
-    color: #777;
-    text-align: center;
-}
+        .sp-navbar .dropdown-menu::before {
+            display: none;
+        }
 
-/* Responsive Styling */
-@media (max-width: 768px) {
-    .site-footer-title {
-        font-size: 1rem;
-    }
+        .sp-navbar .dropdown-item {
+            display: block;
+            color: #4a4a4a;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 20px;
+            text-transform: none;
+            letter-spacing: 0;
+            transition: all 0.2s ease;
+        }
 
-    .site-footer-links li {
-        margin-bottom: 5px;
-    }
-}
+        .sp-navbar .dropdown-item:hover,
+        .sp-navbar .dropdown-item:focus {
+            background: rgba(19, 84, 122, 0.06);
+            color: #13547a;
+            padding-left: 24px;
+        }
 
+        /* Mega Menu */
+        .sp-mega-menu {
+            width: 100%;
+            left: 0;
+            right: 0;
+            border: none;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding: 28px 32px;
+            margin-top: 0;
+        }
+
+        .sp-mega-col {
+            padding: 8px 20px;
+        }
+
+        .sp-mega-col + .sp-mega-col {
+            border-left: 1px solid #eef2f7;
+        }
+
+        .sp-mega-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #13547a;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(19, 84, 122, 0.1);
+        }
+
+        .sp-mega-list li {
+            margin-bottom: 2px;
+        }
+
+        .sp-mega-list li a {
+            display: block;
+            padding: 7px 10px;
+            color: #555;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .sp-mega-list li a:hover {
+            color: #13547a;
+            background: rgba(19, 84, 122, 0.05);
+            padding-left: 14px;
+        }
+
+        .sp-mega-desc {
+            font-size: 13px;
+            color: #777;
+            line-height: 1.7;
+        }
+
+        /* User Badge */
+        .sp-user-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #13547a, #2e8b57);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            margin-right: 6px;
+        }
+
+        /* Donate Button */
+        .sp-btn-donate {
+            background: linear-gradient(135deg, #2e8b57, #3cb371);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 22px;
+            border-radius: 50px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .sp-btn-donate:hover {
+            background: linear-gradient(135deg, #256d47, #2e8b57);
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(46, 139, 87, 0.35);
+        }
+
+        /* Mobile Toggler */
+        .sp-toggler {
+            border: none;
+            padding: 6px;
+            background: none;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 30px;
+        }
+
+        .sp-toggler:focus {
+            box-shadow: none;
+            outline: none;
+        }
+
+        .sp-toggler span {
+            display: block;
+            height: 2px;
+            width: 100%;
+            background: #2d3436;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .sp-toggler[aria-expanded="true"] span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .sp-toggler[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .sp-toggler[aria-expanded="true"] span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 991.98px) {
+            .sp-navbar .navbar-collapse {
+                background: #fff;
+                padding: 16px 0;
+                margin-top: 8px;
+                border-top: 1px solid #eee;
+                max-height: 80vh;
+                overflow-y: auto;
+            }
+
+            .sp-navbar .nav-link {
+                padding: 10px 12px;
+            }
+
+            .sp-navbar .dropdown-menu {
+                position: static !important;
+                box-shadow: none;
+                border: 1px solid #eee;
+                border-radius: 8px;
+                margin: 4px 0 8px 0;
+                padding: 12px;
+            }
+
+            .sp-mega-menu {
+                padding: 16px;
+            }
+
+            .sp-mega-col {
+                padding: 10px 8px;
+            }
+
+            .sp-mega-col + .sp-mega-col {
+                border-left: none;
+                border-top: 1px solid #eef2f7;
+                margin-top: 8px;
+                padding-top: 14px;
+            }
+
+            .sp-btn-donate {
+                display: block;
+                text-align: center;
+                margin: 12px 0 0;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            padding: 60px 0 30px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #cfd8e3;
+        }
+
+        .site-footer-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .site-footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .site-footer-link {
+            color: #a0aec0;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: inline-block;
+            transition: all 0.25s ease;
+        }
+
+        .site-footer-link:hover {
+            color: #80d0c7;
+            padding-left: 4px;
+        }
+
+        .copyright-text {
+            font-size: 13px;
+            color: #6c7a89;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .site-footer {
+                padding: 40px 0 20px;
+            }
+
+            .site-footer-title {
+                font-size: 13px;
+            }
+
+            .site-footer-links li {
+                margin-bottom: 5px;
+            }
+        }
     </style>
         {% block style %}
 	
@@ -99,107 +340,83 @@
 
 
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <nav class="navbar navbar-expand-lg sticky-top sp-navbar">
     <div class="container">
         <!-- Logo -->
-{#        <a class="navbar-brand" href="{% url 'core:home_page' %}">#}
-{#            <img src="{% static 'core/images/logo.png' %}" alt="SmartPikin" style="height: 40px;">#}
-{#        </a>#}
-{#    #}
-{#    <a class="navbar-brand" href="{% url 'core:home_page' %}" style="font-size: 24px; font-weight: bold; color: green;">  #}
-{#    SmartPikin  #}
-{#</a>#}
-    <a class="navbar-brand mb-2 text-white" href="index.html">
-                    <i class="bi-back"></i>
-                    <span class="fw-bold">SmartPikin</span>
-                </a>
+        <a class="navbar-brand" href="{% url 'core:home_page' %}">
+            <img src="{% static 'core/images/header_logo.png' %}" alt="SmartPikin" class="sp-navbar-logo">
+        </a>
 
         <!-- Toggler for small screens -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        <button class="navbar-toggler sp-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
 
         <!-- Collapsible Menu -->
         <div class="collapse navbar-collapse" id="navbarContent">
-            <!-- Main Navigation Tabs -->
+            <!-- Main Navigation -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <!-- Home -->
                 <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'core:home_page' %}">
-                        <i class="fas fa-home"></i> Home
-                    </a>
+                    <a class="nav-link active" href="{% url 'core:home_page' %}">Home</a>
                 </li>
-                
-                <!-- AI Content Mega Menu -->
-                <li class="nav-item dropdown dropdown-mega position-static">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">
-                        <i class="fas fa-brain"></i> AI Tools
+
+                <!-- AI Tools Dropdown -->
+                <li class="nav-item dropdown position-static">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        AI Tools
                     </a>
-                    <div class="dropdown-menu shadow p-4" style="min-width: 600px;">
-                        <div class="mega-content">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <!-- AI Views Section -->
-                                    <div class="col-12 col-sm-6 col-md-4 py-3">
-                                        <h6>Content Creation</h6>
-                                        <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="{% url 'ai_core:lesson_plan_generator' %}">Lesson Plan Generator</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'ai_core:creative_writing' %}">Creative Writing Assistant</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'ai_core:teacher_summarization_form' %}">AI Summarizer</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'ai_core:math_lesson_note_generator' %}">AI Math Lesson Generator</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'ai_core:question_generator' %}">AI Questions Generator</a></li>
-                                            
-                                        </ul>
-                                    </div>
-                                    <!-- Previous Prompts Section -->
-{#                                    <div class="col-12 col-sm-6 col-md-4 py-3">#}
-{#                                        <h6>Saved Prompts</h6>#}
-{#                                        <ul class="list-unstyled">#}
-{#                                            <li><a class="dropdown-item" href="#">My Prompts</a></li>#}
-{#                                            <li><a class="dropdown-item" href="#">Saved Summaries</a></li>#}
-{#                                        </ul>#}
-{#                                    </div>#}
-                                    <div class="col-12 col-sm-6 col-md-4 py-3">
-                                        <h6>Ai Study Padi</h6>
-                                        <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="{% url 'ai_core:query' %}">History </a></li>
-                                            <li><a class="dropdown-item" href="#">Economics</a></li>
-                                            <li><a class="dropdown-item" href="#">Physics</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- About Section -->
-                                    <div class="col-12 col-md-4 py-3">
-                                        <h6>About AI Tools</h6>
-                                        <p class="text-muted">
-                                            Learn how our AI solutions assist educators in content creation, productivity, and more.
-                                        </p>
-                                    </div>
-                                </div>
+                    <div class="dropdown-menu sp-mega-menu">
+                        <div class="row g-0">
+                            <div class="col-md-4 sp-mega-col">
+                                <h6 class="sp-mega-heading">Content Creation</h6>
+                                <ul class="list-unstyled sp-mega-list">
+                                    <li><a href="{% url 'ai_core:lesson_plan_generator' %}">Lesson Plan Generator</a></li>
+                                    <li><a href="{% url 'ai_core:creative_writing' %}">Creative Writing Assistant</a></li>
+                                    <li><a href="{% url 'ai_core:teacher_summarization_form' %}">AI Summarizer</a></li>
+                                    <li><a href="{% url 'ai_core:math_lesson_note_generator' %}">AI Math Lesson Generator</a></li>
+                                    <li><a href="{% url 'ai_core:question_generator' %}">AI Questions Generator</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 sp-mega-col">
+                                <h6 class="sp-mega-heading">AI Study Padi</h6>
+                                <ul class="list-unstyled sp-mega-list">
+                                    <li><a href="{% url 'ai_core:query' %}">History</a></li>
+                                    <li><a href="#">Economics</a></li>
+                                    <li><a href="#">Physics</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 sp-mega-col">
+                                <h6 class="sp-mega-heading">About AI Tools</h6>
+                                <p class="sp-mega-desc">
+                                    Learn how our AI solutions assist educators in content creation, productivity, and more.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </li>
-                
-                <!-- Resource Sections -->
+
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'core:school-list' %}"><i class="fas fa-school"></i> Schools</a>
+                    <a class="nav-link" href="{% url 'core:school-list' %}">Schools</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'core:teacher-list' %}"><i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+                    <a class="nav-link" href="{% url 'core:teacher-list' %}">Teachers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'core:tutor-list' %}"><i class="fas fa-user-tie"></i> Tutors</a>
+                    <a class="nav-link" href="{% url 'core:tutor-list' %}">Tutors</a>
                 </li>
             </ul>
 
-            <!-- Account Menu: Authentication and Registration -->
-            <ul class="navbar-nav mb-2 mb-lg-0">
+            <!-- Account Menu -->
+            <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
                 {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user"></i> {{ user.first_name }} ({{ user.role|title }})
+                            <span class="sp-user-badge">{{ user.first_name|make_list|first }}</span>
+                            {{ user.first_name }}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                             {% if user.role == 'admin' %}
@@ -219,8 +436,7 @@
                             {% elif user.role == 'guardian' %}
                                 <li><a class="dropdown-item" href="#">Guardian Dashboard</a></li>
                                 <li><a class="dropdown-item" href="#">View Student Progress</a></li>
-                                <li><a class="dropdown-item" href="#">List Applications </a></li>
-                                
+                                <li><a class="dropdown-item" href="#">List Applications</a></li>
                             {% endif %}
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{% url 'account:logout' %}">Logout</a></li>
@@ -230,7 +446,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="registerDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user-plus"></i> Register
+                            Register
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="registerDropdown">
                             <li><a class="dropdown-item" href="{% url 'account:teacher_register' %}">Register as Teacher</a></li>
@@ -239,14 +455,14 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account:login' %}"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+                        <a class="nav-link" href="{% url 'account:login' %}">Sign In</a>
                     </li>
                 {% endif %}
             </ul>
 
             <!-- Donate Button -->
-            <a href="#" class="btn btn-success ms-lg-3">
-                <i class="fas fa-donate"></i> Donate Now
+            <a href="#" class="btn sp-btn-donate ms-lg-3">
+                Donate Now
             </a>
         </div>
     </div>
@@ -648,17 +864,16 @@
         
         {% endblock %}
 
-<footer class="site-footer section-padding bg-dark text-white">
+<footer class="site-footer section-padding">
     <div class="container">
         <div class="row">
             <!-- Branding Section -->
             <div class="col-lg-3 col-12 mb-4 pb-2">
-                <a class="navbar-brand mb-2 text-white" href="index.html">
-                    <i class="bi-back"></i>
-                    <span class="fw-bold">SmartPikin</span>
+                <a href="{% url 'core:home_page' %}">
+                    <img src="{% static 'core/images/header_logo.png' %}" alt="SmartPikin" style="height: 45px;" class="mb-3">
                 </a>
-                <p class="mt-3">
-                    SmartPiki connects learners with expert educators, offering tailored courses to bridge knowledge gaps and empower success.
+                <p class="mt-2 text-light">
+                    SmartPikin connects learners with expert educators, offering tailored courses to bridge knowledge gaps and empower success.
                 </p>
             </div>
 

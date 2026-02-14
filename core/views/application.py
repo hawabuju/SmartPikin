@@ -87,7 +87,7 @@ def download_application(request, application_id):
     application = get_object_or_404(Application, pk=application_id, user=request.user)
 
     # Resolve static path for the logo (if needed)
-    logo_url = request.build_absolute_uri(static('core/images/logo.png'))
+    logo_url = request.build_absolute_uri(static('core/images/header_logo.png'))
 
     # Render HTML using a Django template
     application_html = render_to_string(

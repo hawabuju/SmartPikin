@@ -3,7 +3,6 @@ import logging
 import os
 
 import markdown
-import weasyprint
 from django.conf import settings
 from django.contrib import messages
 from django.http import HttpResponse
@@ -265,7 +264,7 @@ def download_lesson_plan(request, id):
         return redirect('ai_core:lesson_plan_generator')
 
     # Resolve static path for the logo
-    logo_url = request.build_absolute_uri(static('core/images/logo.png'))
+    logo_url = request.build_absolute_uri(static('core/images/header_logo.png'))
 
     # Render HTML with Django template
     lesson_plan_html = render_to_string(
@@ -278,6 +277,7 @@ def download_lesson_plan(request, id):
     )
 
     # Generate PDF with WeasyPrint
+    import weasyprint
     pdf = weasyprint.HTML(string=lesson_plan_html, base_url=request.build_absolute_uri('/')).write_pdf()
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename="lesson_plan.pdf"'

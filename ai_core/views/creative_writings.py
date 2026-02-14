@@ -290,7 +290,7 @@ def download_writing_prompt_pdf(request, id):
         return redirect('ai_core:creative_writing_assistant')
 
     # Resolve static path for the logo
-    logo_url = request.build_absolute_uri(static('core/images/logo.png'))
+    logo_url = request.build_absolute_uri(static('core/images/header_logo.png'))
 
     # Render HTML with Django template
     writing_prompt_html = render_to_string(
