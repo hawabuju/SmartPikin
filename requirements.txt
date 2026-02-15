@@ -13,6 +13,7 @@ pdfkit
 pdfplumber
 pillow
 requests
+markdown
 markdown2
 qrcode
 whitenoise
